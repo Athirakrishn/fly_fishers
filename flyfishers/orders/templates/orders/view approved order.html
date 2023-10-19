@@ -1,0 +1,40 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view approved order</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Approved order</h1>
+				<tr>
+                    <td>Order id</td>
+					<td>EquipmentName</td>
+					<td>Quantity</td>
+					<td>Price</td>
+					<td>Subcide</td>
+                    <td colspan="2"></td>
+
+				<tr>
+                {% for i in a %}
+				<tr>
+                    <td>{{ i.order_id }}</td>
+					<td>{{ i.equipment.equipment_name }}</td>
+                    <td>{{ i.quantity }}</td>
+					<td>{{ i.amount }}</td>
+					<td>{{ i.subcidy }}</td>
+                    <td><a href="{% url 'pay' idd=i.order_id %}" class="btn btn-outline-primary"> PAYMENT</a> </td>
+
+
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

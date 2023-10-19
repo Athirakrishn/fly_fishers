@@ -1,0 +1,38 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>critical alert</title>
+</head>
+<body>
+	<center>
+		<h1 style="color:white">CRITICAL ALERT</h1>
+		<table>
+			<form method="post" class="form-floating" >
+                {% csrf_token %}
+				<tr>
+					<td style="color:white">Date:</td>
+					<td><input type="text" name="dd" required class="form-control  bg-transparent" style="color:white"></td>
+				</tr>
+				<tr>
+					<td style="color:white">Description:</td>
+					<td><input type="text" name="ss" required class="form-control  bg-transparent" style="color:white"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="ADD"  style="color:white" class="btn btn-outline-primary w-100"></td>
+				</tr>
+                {% if msg %}
+                <script>
+                    alert("Critical Alert Successfully Added ")
+                </script>
+                {% endif %}
+			</form>
+		</table>
+	</center>
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> update equipment</title>
+</head>
+<body>
+	<center><h1 style="color: white">UPDATE EQUIPMENT</h1>
+		<table>
+			<form method="post" enctype="multipart/form-data" class="form-floating ">
+            {% csrf_token %}
+				<tr>
+					<td style="color: white">Equipment Name:</td>
+					<td><input type="text" name="equt" value="{{ d.equipment_name }}" required style="color: white" class="form-control bg-transparent "></td>
+                </tr>
+                <tr>
+					<td style="color: white">Equipment image:</td>
+					<td><input type="file" name="uu" value="{{ d.equipmentimage }}" required style="color: white" class="form-control bg-transparent"></td>
+                </tr>
+				<tr>
+					<td style="color: white">Quandity</td>
+					<td><input type="text" name="Qua" value="{{ d.quandity}}" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Price</td>
+					<td><input type="text" name="Price" value="{{ d.price}}" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Subcide</td>
+					<td><input type="text" name="Sub" value="{{ d.subsidy }}" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+				    <td><input type="submit" name="btn" value="UPDATE" style="color: white" class="btn btn-outline-primary"></td>
+				<tr>
+         {% if msg %}
+            <script>
+            alert("Equipment Updated successfully")
+            </script>
+        {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

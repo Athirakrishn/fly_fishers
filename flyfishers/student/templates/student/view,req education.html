@@ -1,0 +1,33 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view and request educational assistance</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form >
+				<tr>
+					<td>Scolarship Name</td>
+					<td>Description:</td>
+					<td colspan="2"></td>
+				</tr>
+                {% for i in y %}
+				<tr>
+					<td>{{ i. }}</td>
+					<td></td>
+					<td><a href="">DOWNLOAD</td>
+					<td><a href="">REQUEST</td>
+
+					<td></td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

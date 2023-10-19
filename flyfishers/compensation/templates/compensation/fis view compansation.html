@@ -1,0 +1,36 @@
+
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view,for compensation</title>
+</head>
+<body>
+	<center>
+	<table  border="1" class="table-bordered table table-striped">
+		<form ><h1>Compensation</h1>
+			<tr>
+				<td>Title</td>
+				<td>Amount</td>
+                <td>Rules</td>
+				<td colspan="2"></td>
+				
+			</tr>
+              {% for i in f %}
+			<tr>
+				<td>{{ i.title }}</td>
+				<td>{{ i.amount }}</td>
+                <td>{{ i.rules }}</td>
+				<td><a href=" /static/{{ i.rules }}"  class="btn btn-outline-primary">DOWNLOAD</a></td>
+                <td><a href="{% url 'bb' idd=i.compensation_id %}"  class="btn btn-outline-primary">REQUEST</a></td>
+
+			
+			</tr>
+              {% endfor %}
+		</form>
+	</table>
+    </center>
+</body>
+</html>
+{% endblock %}

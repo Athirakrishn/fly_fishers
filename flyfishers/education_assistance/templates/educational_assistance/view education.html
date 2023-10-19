@@ -1,0 +1,31 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view educational assistance</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form  ><h1>Educational assistance</h1>
+				<tr>
+					<td>Scolarship Name</td>
+					<td>Description:</td>
+					<td colspan="2">
+				</tr>
+                {% for i in x %}
+				<tr>
+					<td>{{ i.scolarship_name }}</td>
+					<td>{{ i.description }}</td>
+                    <td><a href="/static/{{ i.description }}"  class="btn btn-outline-primary">DOWNLOAD</a></td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

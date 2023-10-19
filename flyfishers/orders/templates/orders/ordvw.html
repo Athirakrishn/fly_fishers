@@ -1,0 +1,40 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> order equipment</title>
+</head>
+<body>
+	<center><h1 style="color: white">Order</h1>
+		<table>
+			<form method="post" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">EquipmentName </td>
+					<td><input type="text" name="ee" value="{{ jj.equipment_name }}" required class="form-control btn-primary bg-transparent " style="color: white"></td>
+
+				</tr>
+				<tr>
+					<td style="color: white">Quantity</td>
+					<td><input type="text" name="cc" required class="form-control btn-primary bg-transparent" style="color: white" ></td>
+				</tr>
+				<tr>
+					<td style="color: white"hidden>Amount</td>
+					<td><input type="text" name="amt" value="{{ jj.price }}" required class="form-control btn-primary " style="color: white" hidden></td>
+				</tr>
+				<tr>
+					<td style="color: white"hidden>Subcidy</td>
+					<td><input type="text" name="Sub" value="{{ jj.subsidy }}" required class="form-control btn-primary " style="color: white"hidden></td>
+				</tr>
+				<tr>
+					<td></td>
+				    <td><input type="submit" name="btn" value="order" class="btn btn-outline-primary " style="color: white"> </td>
+				<tr>    
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

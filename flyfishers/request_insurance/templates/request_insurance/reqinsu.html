@@ -1,0 +1,48 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request for Insurance</title>
+</head>
+<body>
+	<center><h1 style="color: white">Requset For Insurance</h1>
+		<table>
+			<form method="post" class="form-floating" enctype="multipart/form-data">
+                 {% csrf_token %}
+				<tr>
+					<td style="color: white">Fishermen name:</td>
+					<td><input type="text" name="usn"  required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+
+				<tr>
+					<td style="color: white">Vessel</td>
+					<td><select name="vss">
+                        <option>-----Select-----</option>
+                        {% for i in x %}
+                            <option value="{{ i.vessel_id }}">{{ i.name_of_vessel }}  </option>
+                        {% endfor %}
+                    </select></td>
+                </tr>
+                <tr>
+					<td style="color: white">Id Proof:</td>
+					<td><input type="file" name="idp"  required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="REQUEST" style="color: white" class="btn btn-outline-primary"></td>
+				</tr>
+				{% if msg %}
+                <script>
+                    alert("Requested Successfully")
+                </script>
+                {% endif %}
+				
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

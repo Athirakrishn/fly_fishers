@@ -1,0 +1,43 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage req for compensation</title>
+</head>
+<body>
+	<center>
+	<table border="1" class="table-bordered table table-striped">
+		<form ><h1> Manage Compensation </h1>
+			<tr>
+				<td>UserName</td>
+				<td>Reason</td>
+				<td>Proof</td>
+				<td>Date</td>
+                <td>More details</td>
+                <td>status</td>
+
+				<td colspan="2"></td>
+				
+			</tr>
+            {% for i in a %}
+			<tr>
+                <td>{{ i.fishermen.name }}</td>
+				<td>{{ i.reason }}</td>
+                <td><a href="/static/{{ i.proof}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+				<td>{{ i.date }}</td>
+                <td><a href="/static/{{ i.details }}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+				<td>{{ i.status }}</td>
+				<td><a href="{% url 'a1' idd=i.req_compensation_id %}"  class="btn btn-outline-primary">APPROVE</a></td>
+				<td><a href="{% url 'r1' idd=i.req_compensation_id %}"  class="btn btn-outline-primary">REJECT</a></td>
+			
+			</tr>
+            {% endfor %}
+		</form>
+	</table>
+    </center>
+</body>
+</html>
+{% endblock %}

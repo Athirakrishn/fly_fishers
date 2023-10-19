@@ -1,0 +1,64 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vessel</title>
+</head>
+<body>
+	<center><h1 style="color: white"> VESSELS</h1>
+		<table>
+			<form method="POST" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">FishermenName</td>
+					<td><input type="text" name="fsn" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Name Of Vessel</td>
+					<td><input type="text" name="vsl" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">RegisterNumber</td>
+					<td><input type="text" name="rgn" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">LicenseNumber</td>
+					<td><input type="text" name="lisn" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">crew</td>
+					<td><input type="text" name="crw" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white"> year</td>
+					<td><input type="text" name="yar" required pattern="{0-9}" minlength="4" maxlength="4" style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">RegisterDate</td>
+					<td><input type="text" name="regd" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">RegisterPlace</td>
+					<td><input type="text" name="regp" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Detailed description</td>
+					<td><input type="file" name="dtd" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="REGISTER" style="color: white" class="btn btn-outline-primary w-100"></td>
+				</tr>
+                {% if msg %}
+                <script>
+                    alert("Vessel added for Verification")
+                </script>
+                {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

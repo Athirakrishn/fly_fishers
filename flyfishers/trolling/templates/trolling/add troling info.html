@@ -1,0 +1,40 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add trolling information</title>
+</head>
+<body>
+	<center><h2 style="color: white">TROLLING INFORMATION</h2>
+		<table>
+			<form method="POST" enctype="multipart/form-data" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">Troling Information:</td>
+					<td><input type="file" name="trf" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">StartingDate:</td>
+					<td><input type="text" name="sdt" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">EndingDate:</td>
+					<td><input type="text" name="edt" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="ADD" style="color: white" class="btn btn-outline-primary" ></td>
+				</tr>
+                {% if msg %}
+                <script>
+                    alert("Trolling Information added Successfully")
+                </script>
+                {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

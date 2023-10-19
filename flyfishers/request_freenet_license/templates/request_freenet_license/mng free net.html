@@ -1,0 +1,42 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage free net license</title>
+</head>
+<body>
+	<center>
+		<TABLE BORDER="1" class="table-bordered table table-striped" enctype="multipart/form-data">
+			<form><h1>Freenet license</h1>
+				<tr>
+					<td>Type of net</td>
+                    <td>Id proof</td>
+					<td>Date</td>
+                    <td>More Details</td>
+					<td>Status</td>
+					<td colspan="2"></td>
+					
+				</tr>
+                {% for i in y %}
+                <tr>
+                    <td>{{ i.freenet_licence.type_of_net }}</td>
+                    <td><a href="/static/{{ i.id_proof}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+					<td>{{ i.date }}</td>
+                   <td><a href="/static/{{ i.more_details}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+					<td>{{ i.status }}</td>
+
+					<td><a href="{% url 'a5' idd=i.req_freenet_license_id %}"  class="btn btn-outline-primary">APPROVE</a></td>
+                    <td><a href="{% url 'r5' idd=i.req_freenet_license_id %}"  class="btn btn-outline-primary">REJECT</a></td>
+				</tr>
+                 {% endfor %}
+			</form>
+			
+		</TABLE>
+	</center>
+
+</body>
+</html>
+{% endblock %}

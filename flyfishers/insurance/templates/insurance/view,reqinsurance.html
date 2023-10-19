@@ -1,0 +1,32 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view & request for insurance</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Insurance</h1>
+			<tr>
+				<td>Insurance Name</td>
+				<td>Description</td>
+				<td colspan="2"></td>
+				
+			</tr>
+                {% for i in y %}
+			<tr>
+			<td>{{ i.insurance_name }}</td>
+			<td>{{ i.description }}</td>
+			<td><a href="/static/{{ i.description }}"  class="btn btn-outline-primary">DOWNLOAD</a></td>
+			<td><a href="{% url 'req2' idd=i.insurance_id %}"  class="btn btn-outline-primary">REQUEST</a></td>
+			</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

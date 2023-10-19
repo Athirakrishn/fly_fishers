@@ -1,0 +1,45 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request for Relief Scheme</title>
+</head>
+<body>
+	<center><h1 style="color: white">Requset For Relief Scheme</h1>
+		<table>
+			<form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+				<tr>
+					<td style="color: white">Reliefe Scheme</td>
+					<td><select name="rs">
+                        <option>-----Select-----</option>
+                        {% for i in hh %}
+                            <option class="btn btn-outline-primary" value="{{ i.relief_schem_id }}" >{{ i.scheme_name }}</option>
+                        {% endfor %}
+
+
+                    </select></td>
+				</tr>
+                <tr>
+					<td style="color: white">Fishermen Id proof:</td>
+					<td><input type="file" name="prf" style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="REQUEST" style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				{% if msg %}
+                <script>
+                    alert("Requested Successfully")
+                </script>
+                {% endif %}
+				
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

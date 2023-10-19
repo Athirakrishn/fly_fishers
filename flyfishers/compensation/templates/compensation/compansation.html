@@ -1,0 +1,41 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>compansation</title>
+</head>
+<body>
+	<center><h1 style="color:white" >COMPANSATION</h1>
+		<table>
+			<form method="post" enctype="multipart/form-data" class="form-floating">
+                {% csrf_token %}
+			<tr>
+				<td style="color:white">Title</td>
+				<td><input type="text" name="ren" required class="form-control  bg-transparent" style="color:white"></td>
+			</tr>
+			<tr>
+				<td style="color:white">Amount:</td>
+				<td><input type="text" name="amt" required class="form-control  bg-transparent" style="color:white"></td>
+			</tr>
+                <tr style="color:white">
+				<td>Rules</td>
+				<td><input type="file" name="rls" required class="form-control  bg-transparent" style="color:white"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="btn" value="ADD" class="btn btn-outline-primary" style="color:white"></td>
+			</tr>
+                 {% if msg %}
+                <script>
+                    alert("Compensation Successfully Added ")
+                </script>
+                {% endif %}
+                </form>
+		</table>
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

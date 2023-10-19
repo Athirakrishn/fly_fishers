@@ -1,0 +1,36 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insurance</title>
+</head>
+<body>
+	<center> <h1 style="color:white">INSURANCE</h1>
+	<table>
+		<form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+	       <tr style="color:white"  >
+	       	<td>Insurance Name:</td>
+	       	<td><input type="text" name="insurance" required class="form-control  bg-transparent" style="color: white" ></td>
+	       </tr>
+	        <tr style="color:white">
+	       	<td>Description:</td>
+	       	<td><input type="file" name="Description" required class="form-control  bg-transparent" style="color: white"></td>
+	       </tr>
+	        <tr style="color:white">
+	       	<td></td>
+	       	<td><input type="submit" name="btn" value="ADD" class="btn btn-outline-primary" style="color: white"></td>
+	       </tr>
+             {% if msg %}
+                <script>
+                    alert("Insurance Successfully Added ")
+                </script>
+                {% endif %}
+		
+	</form>
+</table>
+</center>
+</body>
+</html>
+{% endblock %}

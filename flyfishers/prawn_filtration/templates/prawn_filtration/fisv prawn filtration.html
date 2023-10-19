@@ -1,0 +1,31 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view prawn filtration</title>
+</head>
+<body>
+	<center>
+		
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1> Prawn Filtration</h1>
+				<tr>
+					<td>AvailableDate:</td>
+                    <td>Details</td>
+                    <td colspan="2"></td>
+				</tr>
+                {% for i in o %}
+				<tr>
+					<td>{{ i.available_date }}</td>
+                    <td>{{ i.details }}</td>
+                    <td><a href="/static/{{ i.details }}"  class="btn btn-outline-primary">DOWNLOAD</a></td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

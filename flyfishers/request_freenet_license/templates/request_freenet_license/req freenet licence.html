@@ -1,0 +1,45 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request for free net license</title>
+</head>
+<body>
+	<center><h1 style="color: white">REQUEST FOR FREENET LICENSE</h1>
+		<TABLE>
+			<form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+				<tr>
+					<td style="color: white">FisherMen Id:</td>
+					<td><input type="text" name="fmd" required style="color: white" class="form-control bg-transparent" ></td>
+				</tr>
+				<tr>
+					<td style="color: white">Date:</td>
+					<td><input type="text" name="dt" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+                <tr>
+					<td style="color: white">Id Proof:</td>
+					<td><input type="file" name="idp" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+                 <tr>
+					<td style="color: white">More Details:</td>
+					<td><input type="file" name="yyy" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="REQUEST" style="color: white" class="btn btn-outline-primary"> </td>
+				</tr>
+                {% if msg %}
+                <script>
+                    alert("Requested Successfully")
+                </script>
+                {% endif %}
+			</form>
+			
+		</TABLE>
+	</center>
+
+</body>
+</html>
+{% endblock %}

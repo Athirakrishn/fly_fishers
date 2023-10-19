@@ -1,0 +1,35 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view approve order</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1>ORDER</h1>
+				<tr>
+					<td>Equipment name</td>
+					<td>Fishermen </td>
+					<td>Status</td>
+					<td colspan="2"></td>
+				<tr>
+                {% for i in b %}
+				<tr>
+
+					<td>{{ i.equipment.equipment_name }}</td>
+					<td>{{ i.fishermen.name}}</td>
+                    <td>{{ i.status}}</td>
+                    <td><a href=" {% url 'a1a' idd=i.order_id%} "  class="btn btn-outline-primary">APPROVE</a></td>
+                    <td><a href="{% url 'r1r' idd=i.order_id%}"  class="btn btn-outline-primary">REJECT</a></td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

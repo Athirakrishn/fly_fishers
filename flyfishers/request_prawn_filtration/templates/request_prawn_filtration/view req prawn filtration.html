@@ -1,0 +1,37 @@
+i{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW REQUEST PRAWN FILTRATION</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped" enctype="multipart/form-data">
+			<form><h1>PRAWN FILTRATION</h1>
+				<tr>
+					<td>LicenseNumber</td>
+					<td>Request</td>
+					<td>Date</td>
+					<td>Status</td>
+					<td colspan="2"></td>
+				</tr>
+                {% for i in y %}
+				<tr>
+					<td>{{ i.license_no }}</td>
+                    <td><a href="/static/{{ i.request}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+{#					<td>{{ i.request }}</td>#}
+					<td>{{ i.date }}</td>
+					<td>{{ i.status }}</td>
+					<td><a href="{% url 'a4' idd=i.req_prawn_filtration_id %}"  class="btn btn-outline-primary">APPROVE</a></td>
+					<td><a href="{% url 'r4' idd=i.req_prawn_filtration_id %}"  class="btn btn-outline-primary">REJECT</a></td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

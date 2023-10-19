@@ -1,0 +1,37 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> verify vessel</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<h1>Verified Vessel</h1>
+				<tr>
+					<td>FishermenName</td>
+					<td>Name Of Vessel</td>
+					<td>RegisterNumber</td>
+					<td>LicenseNumber</td>
+                    <td>Status</td>
+
+				</tr>
+                {% for  i in u %}
+				<tr>
+					<td>{{ i.fishermen_name }}</td>
+					<td>{{ i.name_of_vessel}}</td>
+					<td>{{ i.register_no }}</td>
+					<td>{{ i.license_no }}</td>
+                    <td>{{ i.status }}</td>
+
+
+				</tr>
+                 {% endfor %}
+
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'temp/director.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mng dd</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped ">
+			<form ><h1>Manage Deputy Director</h1>
+			<tr >
+				<th>Nme</th>
+				<th>Date Of Birth</th>
+				<th>Gnder</th>
+				<th>Qualification</th>
+				<td>Pin Code</td>
+				<td>City</td>
+				<td>District</td>
+				<td>Contact No</td>
+				<td>Email</td>
+				<td colspan="2"></td>
+				
+			</tr>
+            {% for i in a %}
+			<tr >
+			<td>{{ i.name }}</td>
+			<td>{{ i.date_of_birth }}</td>
+			<td>{{ i.gender }}</td>
+			<td>{{ i.qualification }}</td>
+			<td>{{ i.pincode }}</td>
+			<td>{{ i.city }}</td>
+			<td>{{ i.district}}</td>
+			<td>{{ i.contact_no }}</td>
+			<td>{{ i.email }}</td>
+			<td><a href="{% url 'upd' idd=i.deputydirector_id %}"  class="btn btn-outline-primary">Update</a></td>
+			<td><a href="{% url 'dld' idd=i.deputydirector_id %}"  class="btn btn-outline-primary">Delete</a></td>
+			</tr>
+            {% endfor %}
+            </form>
+        </table>
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

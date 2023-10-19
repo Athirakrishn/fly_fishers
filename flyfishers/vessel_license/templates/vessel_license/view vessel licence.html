@@ -1,0 +1,29 @@
+{% extends 'temp/director.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view vessel license</title>
+</head>
+<body>
+	<center>
+	
+		<table border="1" class="table-bordered table table-striped">
+			<form >
+				<tr><h1>vessel license</h1>
+					<td>Type Of Vessel</td>
+					<td>LicenseType</td>
+				</tr>
+                {% for i in x %}
+				<tr>
+					<td>{{ i.type_of_vessel }}</td>
+					<td>{{ i.license_type }}</td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

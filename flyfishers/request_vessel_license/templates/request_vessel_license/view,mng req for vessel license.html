@@ -1,0 +1,39 @@
+{% extends 'temp/director.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW MANAGE REQUEST FOR VESSEL LICENSE</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1>MANAGE REQUEST FOR VESSEL LICENSE </h1>
+				<tr>
+					<td>Name</td>
+					<td>Vessel name</td>
+					<td>Request</td>
+					<td>ID Proof</td>
+                    <td>Status</td>
+					<td colspan="2"></td>
+				</tr>
+                {% for i in y %}
+			    <tr>
+			    	<td>{{ i.fishermen.name }}</td>
+			    	<td>{{ i.vessel_license.type_of_vessel}}</td>
+			    	<td>{{ i.request }}</td>
+			    	<td>{{ i.id_proof }}</td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="/static/{{ i.id_proof}}">DOWNLOAD</a></td>
+
+			    	<td><a href="{% url 'a6' idd=i.req_vessel_license_id %}"  class="btn btn-outline-primary">APPROVE</a></td>
+			    	<td><a href="{% url 'r6' idd=i.req_vessel_license_id %}"  class="btn btn-outline-primary"> REJECT</td>
+			    </tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW APPROVED PRAWN FILTRATION</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>PRAWN FILTRATION</h1>
+				<tr>
+					<td>LicenseNumber</td>
+					
+					<td>Status</td>
+					
+				</tr>
+                {% for i in x %}
+				<tr>
+					<td>{{ i.license_no }}</td>
+					<td>{{ i.status }}</td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

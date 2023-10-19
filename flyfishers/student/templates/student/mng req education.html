@@ -1,0 +1,56 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> manage request for educational assistance</title>
+</head>
+<body>
+	<center>
+       <form enctype="multipart/form-data">
+		<table border="1" class="table-bordered table table-striped" >
+			<h1 >Manage Request For Educational Assistance</h1>
+			
+			<tr>
+				<td>StudentName</td>
+				<td>StudentClass</td>
+				<td>Date Of Birth</td>
+				<td>Village</td>
+				<td>City</td>
+                <td>PinCode</td>
+				<td>District</td>
+                <td>FisherMen Id Proof</td>
+                <td>Relation Proof</td>
+	            <td>Institution</td>
+				<td>Mark</td>
+                <td>Status</td>
+            </tr>
+                {% for i in z %}
+			<tr>
+				<td>{{ i.student_name }}</td>
+				<td>{{ i.student_class }}</td>
+				<td>{{ i.date_of_birth }}</td>
+				<td>{{ i.village }}</td>
+				<td>{{ i.city }}</td>
+				<td>{{ i.pin_code}}</td>
+				<td>{{ i.district }}</td>
+                 <td><a href="/static/{{ i.fishermen_id_proof}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+                 <td><a href="/static/{{ i.relation_proof}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+				<td>{{ i.institution }}</td>
+                  <td><a href="/static/{{ i.mark}}" class="btn btn-outline-primary">DOWNLOAD</a></td>
+                <td>{{ i.status }}</td>
+                <td> <a href="{% url 'kiim' idd=i.student_id %}"  class="btn btn-outline-primary">APPROVE</a></td>
+                <td><a href="{% url 'jjm' idd=i.student_id %}"  class="btn btn-outline-primary">REJECT</a></td>
+
+			</tr>
+        </form>
+			{% endfor %}
+			
+			
+
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

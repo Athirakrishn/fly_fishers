@@ -1,0 +1,48 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>equipment</title>
+</head>
+<body>
+	<center><h1 style="color: white">EQUIPMENT</h1>
+		<table>
+			<form method="POST" enctype="multipart/form-data" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">EquipmentName:</td>
+					<td><input type="text" name="equt" required style="color: white" class="form-control bg-transparent" ></td>
+                </tr>
+                 <tr>
+					<td style="color: white">Equipment image:</td>
+					<td><input type="file" name="eg" required style="color: white" class="form-control bg-transparent"></td>
+                </tr>
+				<tr>
+					<td style="color: white">Quandity</td>
+					<td><input type="text" name="Qua" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Price</td>
+					<td><input type="text" name="prc" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Subcidy</td>
+					<td><input type="text" name="Sub" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+				    <td><input type="submit" name="btn" value="ADD" style="color: white" class="btn btn-outline-primary"></td>
+				<tr>
+                {% if msg %}
+            <script>
+            alert("Equipment added successfully")
+            </script>
+        {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

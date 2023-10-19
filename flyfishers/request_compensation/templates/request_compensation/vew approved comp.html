@@ -1,0 +1,30 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view approved compensation</title>
+</head>
+<body>
+	<center>
+	<table border="1" class="table-bordered table table-striped">
+		<form ><h1>Compensation</h1>
+			<tr>
+				<td>Reason</td>
+				<td>status</td>
+
+				
+			</tr>
+            {% for i in y %}
+			<tr>
+				<td>{{ i.reason }}</td>
+				<td>{{ i.status }}</td>
+				
+			</tr>
+            {% endfor %}
+		</form>
+	</table>
+    </center>
+</body>
+</html>
+{% endblock %}

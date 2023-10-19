@@ -1,0 +1,31 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view troling information</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1>Trolling</h1>
+				<tr>
+					<td>Troling Information</td>
+					<td>StartingDate</td>
+					<td>EndingDate</td>
+				</tr>
+                {%  for i in x %}
+				<tr>
+					<td>{{ i.trolling_info }}</td>
+					<td>{{ i.starting_date }}</td>
+					<td>{{ i.ending_date }}</td>
+					<td><a href="/static/{{ i.trolling_info }}"  class="btn btn-outline-primary">DOWNLOAD</td>
+				</tr>
+				{% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

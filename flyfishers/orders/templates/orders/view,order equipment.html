@@ -1,0 +1,37 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view and order equipment</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table-striped">
+			<form>
+				<tr>
+					<td>EquipmentName</td>
+					<td>EquipmentImage</td>
+					<td>Quandity</td>
+					<td>Price</td>
+					<td>Subcide</td>
+					<td colspan="2"></td>
+				<tr>
+                {% for i in x %}
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="">ORDER</td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

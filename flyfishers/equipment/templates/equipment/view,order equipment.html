@@ -1,0 +1,39 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view and order equipment</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Equipment</h1>
+				<tr>
+					<td>EquipmentName</td>
+					<td>EquipmentImage</td>
+					<td>Quandity</td>
+					<td>Price</td>
+					<td>Subcide</td>
+					<td colspan="2"></td>
+				<tr>
+                {% for i in x %}
+				<tr>
+					<td>{{ i.equipment_name }}</td>
+                    <td><a href="/static/{{ i.equipmentimage }}" ><img src="/static/{{ i.equipmentimage }}"style="height: 50px;width: 50px"></a></td>
+
+{#					<td><img src="/static/{{ i.equipmentimage }}" height="50" width="50"></td>#}
+					<td>{{ i.quandity }}</td>
+					<td>{{ i.price }}</td>
+					<td>{{ i.subsidy }}</td>
+                    <td><a href=" {% url 'ww' idd=i.equipment_id%}"  class="btn btn-outline-primary">ORDER</a></td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

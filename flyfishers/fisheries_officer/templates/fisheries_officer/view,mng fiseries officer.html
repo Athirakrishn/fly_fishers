@@ -1,0 +1,47 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view fisheries officer</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<h1>Manage Fisheries Officer</h1>
+            {% csrf_token %}
+			<tr>
+				<td>Name</td>
+				<td>Date Of Birth</td>
+				<td>Gnder</td>
+				<td>Qualification</td>
+				<td>Pin Code</td>
+				<td>City</td>
+				<td>District</td>
+				<td>Contact No</td>
+				<td>Email</td>
+				<td colspan="2"></td>
+				
+			</tr>
+                {% for i in b %}
+			<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.date_of_birth }}</td>
+			<td>{{ i.gender }}</td>
+			<td>{{ i.qualification }}</td>
+			<td>{{ i.pincode }}</td>
+			<td>{{ i.city }}</td>
+			<td>{{ i.district }}</td>
+			<td>{{ i.contact_no }}</td>
+			<td>{{ i.email }}</td>
+			<td><a href="{% url 'pp' idd=i.fisheries_officer_id %}"  class="btn btn-outline-primary">Update</a></td>
+			<td><a href="{% url 'ff' idd=i.fisheries_officer_id %}"  class="btn btn-outline-primary">Delete</a></td>
+			</tr>
+                {% endfor %}
+
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

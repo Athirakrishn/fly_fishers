@@ -1,0 +1,73 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>update fisheries officer</title>
+</head>
+<body>
+	<center><hi style="color: white">UPDATE FISHERIES OFFICER</hi>
+<table>
+	<form method="POST" class="form-floating">
+    {% csrf_token %}
+		<tr>
+			<td style="color: white">Name:</td>
+			<td><input type="text" name="nam" value="{{ b.name }}" required style="color: white" class= "form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Date Of Birth:</td>
+			<td><input type="text" name="dob" value="{{ b.date_of_birth }}" required style="color: white" class="form-control bg-transparent "></td>
+		</tr>
+{#		<tr>#}
+{#			<td style="color: white">Gender:</td>#}
+{#			<td><input type="radio" name="gen" value="Male" checked>Male#}
+{#            <input type="radio" name="gen" value="Female">Female#}
+{#            <input type="radio" name="gen" value="Others">Other </td>#}
+{#		</tr>#}
+		<tr>
+			<td style="color: white">Qualification:</td>
+			<td><input type="text" name="Qua" value="{{ b.qualification }}" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Pin Code:</td>
+			<td><input type="text" name="pin" value="{{ b.pincode }}" required pattern="{0-9}" minlength="6" maxlength="6" style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white" >City:</td>
+			<td><input type="text" name="city" value="{{ b.city }}" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">District:</td>
+			<td><input type="text" name="District" value="{{ b.district }}" required style="color: white"class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Contact No:</td>
+			<td><input type="text" name="num" value="{{ b.contact_no }}" required pattern="{0-9}" minlength="10" maxlength="10"style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Email:</td>
+			<td><input type="email" name="email" value="{{ b.email }}" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+	
+		<tr>
+			<td style="color: white">Password:</td>
+			<td><input type="Password" name="paa" value="{{ b.password}}" required style="color: white" class=" form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="UPDATE" style="color: white" class="btn btn-outline-primary"></td>
+			
+		</tr>
+         {% if msg %}
+             <script>
+                    alert("Fisheries Officer Updated Successfully ")
+                </script>
+                {% endif %}
+		
+	</center>
+	</form>
+</table>		
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view approved</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<h1>Relief Scheme</h1>
+			<tr>
+				
+				<td>Scheme Name</td>
+				<td>Status</td>
+
+				
+			</tr>
+                {% for i in y %}
+			<tr>
+			<td>{{ i.relief_schem.scheme_name }}</td>
+			<td>{{ i.status }}</td>
+			</tr>
+                {% endfor %}
+
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

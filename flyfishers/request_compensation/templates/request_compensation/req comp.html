@@ -1,0 +1,49 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request for compansation</title>
+</head>
+<body>
+	<center><h1 style="color: white">Requset For Compansation</h1>
+		<table>
+			<form method="post" class="form-floating"enctype="multipart/form-data" >
+                 {% csrf_token %}
+				<tr>
+					<td style="color: white">UserName:</td>
+					<td><input type="text" name="usn" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Reason:</td>
+					<td><input type="text" name="rsn" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Proof:</td>
+					<td><input type="file" name="prf" required style="color: white" class="form-control bg-transparent"></td>
+				<tr>
+					<td style="color: white">Date:</td>
+					<td><input type="text" name="dt" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+                 <tr>
+					<td style="color: white">More Details:</td>
+					<td><input type="file" name="mmm" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="REQUEST" style="color: white" class="btn btn-outline-primary"></td>
+				</tr>
+				{% if msg %}
+                    <script>
+                    alert("Requested for Compensation")
+                    </script>
+                {% endif %}
+				
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>equipment</title>
+</head>
+<body>
+	<center>
+		<table border="1" class='table-striped table table-bordered'>
+			<form><h1>Manage Equipment</h1>
+				<tr>
+					<td>EquipmentName</td>
+					<td>EquipmentImage</td>
+					<td>Quandity</td>
+					<td>Price</td>
+					<td>Subcidy</td>
+					<td colspan="2"></td>
+				<tr>
+                {% for i in d %}
+				<tr>
+					<td>{{ i.equipment_name}}</td>
+                    <td><a href="/static/{{ i.equipmentimage }}" ><img src="/static/{{ i.equipmentimage }}"style="height: 50px;width: 50px"></a></td>
+					<td>{{ i.quandity }}</td>
+					<td>{{ i.price }}</td>
+					<td>{{ i.subsidy }}</td>
+                    <td><a href="{% url 'dat' idd=i.equipment_id %}"  class="btn btn-outline-primary">UPDATE</a></td>
+                    <td><a href="{% url 'er' idd=i.equipment_id %}"  class="btn btn-outline-primary">DELETE</a></td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

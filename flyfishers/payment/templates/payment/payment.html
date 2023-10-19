@@ -1,0 +1,53 @@
+{% extends 'temp/fishermen.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>payment</title>
+</head>
+<body>
+	<center><h1 style="color: white">PAYMENT</h1>
+ 		<table>
+			<form method="POST" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color:white">Name:</td>
+					<td><input type="text" name="name" value="{{ e.fishermen.name }}"  class="form-control bg-transparent" style="color: white"></td>
+				</tr>
+				<tr>
+					<td style="color:white">Account Number:</td>
+					<td><input type="text" name="Account"   required class="form-control bg-transparent" style="color: white" ></td>
+				</tr>
+				<tr>
+					<td style="color: white">Amount:</td>
+					<td><input type="text" name="Amt" value="{{ e.amount}}" required class="form-control bg-transparent" style="color: white"readonly ></td>
+				</tr>
+				<tr>
+					<td style="color:white">BankName:</td>
+					<td><input type="text" name="Bank" required class="form-control bg-transparent" style="color: white"></td>
+				</tr>
+				<tr>
+					<td style="color: white">BranchName:</td>
+					<td><input type="text" name="Branch" required class="form-control bg-transparent" style="color: white"></td>
+				</tr>
+				<tr>
+					<td style="color: white">IFSC Code:</td>
+					<td><input type="text" name="ifc" required class="form-control bg-transparent" style="color: white"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="pay" class="btn btn-outline-primary" style="color: white"></td>
+				</tr>
+                 {% if msg %}
+                <script>
+                    alert("Payment Successfully Completed  ")
+                </script>
+                {% endif %}
+				
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

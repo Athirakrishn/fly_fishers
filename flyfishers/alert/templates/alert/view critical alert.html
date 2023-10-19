@@ -1,0 +1,32 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view critical alert</title>
+</head>
+<body>
+	<center>
+		
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1 > Critical Alert</h1>
+				<tr >
+					<td>Date</td>
+					<td>Description</td>
+
+				</tr>
+                 {% for i in x %}
+				<tr >
+					<td>{{ i.date }}</td>
+					<td>{{ i.description }}</td>
+
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+
+</body>
+</html>
+{% endblock %}

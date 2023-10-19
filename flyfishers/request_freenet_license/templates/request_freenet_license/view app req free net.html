@@ -1,0 +1,34 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view approved free net license</title>
+</head>
+<body>
+	<center>
+		<TABLE BORDER="1" class="table-bordered table table-striped">
+			<form><h1>Freenet license</h1>
+				<tr>
+					<td>Freenet Type</td>
+					<td>Date</td>
+					<td>Status</td>
+					
+					
+				</tr>
+                {% for i in x %}
+				<tr>
+					<td>{{ i.freenet_licence.type_of_net }}</td>
+					<td>{{ i.date }}</td>
+					<td>{{ i.status }}</td>
+					
+				</tr>
+                {% endfor %}
+			</form>
+			
+		</TABLE>
+	</center>
+
+</body>
+</html>
+{% endblock %}

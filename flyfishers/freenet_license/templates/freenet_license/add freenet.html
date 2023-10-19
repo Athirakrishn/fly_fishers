@@ -1,0 +1,36 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add free net license</title>
+</head>
+<body>
+	<center><h1 style="color: white"> ADD FREE NET LICENSE</h1>
+		<table>
+			<form method="POST" enctype="multipart/form-data" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">Type Of Net:</td>
+					<td><input type="text" name="typ" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Description:</td>
+					<td><input type="file" name="Des" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="ADD" style="color: white" class="btn btn-outline-primary"></td>
+				</tr>
+                 {% if msg %}
+                <script>
+                    alert("FreeNet License Successfully Added ")
+                </script>
+                {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

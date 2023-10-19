@@ -1,0 +1,49 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> verify vessel</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Verify Vessel</h1>
+				<tr>
+					<td>FishermenName</td>
+					<td>Name Of Vessel</td>
+					<td>RegisterNumber</td>
+					<td>LicenseNumber</td>
+					<td>crew</td>
+					<td>year</td>
+					<td>RegisterDate</td>
+					<td>RegisterPlace</td>
+                    <td>Details</td>
+                    <td>Status</td>
+
+					<td colspan="2"></td>
+				</tr>
+                {% for  i in x %}
+				<tr>
+					<td>{{ i.fishermen_name }}</td>
+					<td>{{ i.name_of_vessel}}</td>
+					<td>{{ i.register_no }}</td>
+					<td>{{ i.license_no }}</td>
+					<td>{{ i.crew }}</td>
+					<td>{{ i.year }}</td>
+					<td>{{ i.register_date }}</td>
+					<td>{{ i.register_place }}</td>
+                    <td><a href="/static/{{ i.detailed_description}}"  class="btn btn-outline-primary">DOWNLOAD</a></td>
+
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'vfy' idd=i.vessel_id %}"  class="btn btn-outline-primary">VERIFY</a></td>
+                    <td><a href="{% url 'rjt' idd=i.vessel_id %}"  class="btn btn-outline-primary">REJECT</a></td>
+				</tr>
+                 {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

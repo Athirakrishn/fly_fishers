@@ -1,0 +1,32 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage troling</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1>Manage Trolling</h1>
+				<tr>
+					<td>Troling Information</td>
+					<td>StartingDate</td>
+					<td>EndingDate</td>
+					<td colspan="2"></td>
+				</tr>
+                {% for i in y %}
+				<tr>
+					<td>{{ i.trolling_info }}</td>
+					<td>{{ i.starting_date }}</td>
+					<td>{{ i.ending_date }}</td>
+					<td><a href="{% url 'qwe' idd=i.trolling_id %}"  class="btn btn-outline-primary">DElETE</td>
+				</tr>
+				{% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

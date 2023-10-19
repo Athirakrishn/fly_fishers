@@ -1,0 +1,35 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reliefschem</title>
+</head>
+<body>
+	<center><h1 style="color: white">RELIEF SCHEME</h1>
+	<table>
+		<form method="POST" enctype="multipart/form-data" class="form-floating">
+            {% csrf_token %}
+			<tr>
+				<td style="color: white">Scheme Name:</td>
+				<td><input type="text" name="scm" required class="form-control bg-transparent" style="color: white"></td>
+			</tr>
+			<tr>
+				<td style="color: white">Description:</td>
+				<td><input type="file" name="des" required class="form-control bg-transparent" style="color: white"></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="ADD" class="btn btn-outline-primary" style="color: white" ></td>
+		</tr>
+         {% if msg %}
+            <script>
+            alert("Relief scheme added successfully")
+            </script>
+        {% endif %}
+		</form>
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

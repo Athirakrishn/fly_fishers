@@ -1,0 +1,72 @@
+{% extends 'temp/deputydirector.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add fisheries officer</title>
+</head>
+<body>
+	<center><hi style="color: white" >REGISTER FISHERIES OFFICER</hi>
+<table>
+	<form method="POST" class="form-floating">
+        {% csrf_token %}
+		<tr>
+			<td style="color: white">Name:</td>
+			<td><input type="text" name="nam" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Date Of Birth:</td>
+			<td><input type="text" name="dob" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Gender:</td>
+             <td><input type="radio" name="gender" value="Male" checked>Male
+             <input type="radio" name="gender" value="Female">Female
+             <input type="radio" name="gender" value="Others">Other </td>
+		</tr>
+		<tr>
+			<td style="color: white">Qualification:</td>
+			<td><input type="text" name="qua" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Pin Code:</td>
+			<td><input type="text" name="pnc" required pattern="{0-9}" minlength="6" maxlength="6" style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">City:</td>
+			<td><input type="text" name="city" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">District:</td>
+			<td><input type="text" name="District" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Contact No:</td>
+			<td><input type="text" name="num" required pattern="{0-9}" minlength="10" maxlength="10" style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td style="color: white">Email:</td>
+			<td><input type="email" name="email" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+	
+		<tr>
+			<td style="color: white">Password:</td>
+			<td><input type="Password" name="psw" required style="color: white" class="form-control bg-transparent"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="REGISTER" style="color: white" class="btn btn-outline-primary"></td>
+			
+		</tr>
+		{% if msg %}
+            <script>
+            alert("Registered successfully")
+            </script>
+        {% endif %}
+	</center>
+	</form>
+</table>		
+
+</body>
+</html>
+{% endblock %}

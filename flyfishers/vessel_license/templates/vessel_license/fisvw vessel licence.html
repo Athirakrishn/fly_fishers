@@ -1,0 +1,29 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view vessel license</title>
+</head>
+<body>
+	<center>
+	
+		<table border="1" class="table-bordered table table-striped">
+            <form ><h1>vessel license</h1>
+				<tr>
+					<td>Type Of Vessel</td>
+					<td>LicenseType</td>
+				</tr>
+                {% for i in y %}
+				<tr>
+					<td>{{ i.type_of_vessel }}</td>
+					<td>{{ i.license_type }}</td>
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

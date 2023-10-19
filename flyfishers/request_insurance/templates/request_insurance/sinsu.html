@@ -1,0 +1,32 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>status</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Insurance</h1>
+			<tr>
+				<td>Insurance Name</td>
+
+				<td>Status</td>
+				
+			</tr>
+                {% for i in z %}
+			<tr>
+			<td>{{ i.insurance.insurance_name }}</td>
+
+            <td>{{ i.status }}</td>
+			
+			</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

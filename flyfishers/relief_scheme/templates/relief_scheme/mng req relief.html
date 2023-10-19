@@ -1,0 +1,33 @@
+{% extends 'temp/director.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mng req relief scheme</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form method="post"></form>
+			<tr>
+				<td>User Name</td>
+				<td>Scheme Name</td>
+				<td>Status</td>
+				<td colspan="2"></td>
+				
+			</tr>
+            {% for i in x %}
+			<tr>
+			<td></td>
+      		<td></td>
+			<td></td>
+			<td><a href="">APPROVE</a></td>
+			<td><a href="">REJECT</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'temp/fishermen.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VIEW APPROVED REQUEST FOR VESSEL LICENSE</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form ><h1>APPROVED REQUEST FOR VESSEL LICENSE</h1>
+				<tr>
+					<td>Name</td>
+					<td>Vessel Number</td>
+					<td>Status</td>
+					
+				</tr>
+                {% for i in x %}
+			    <tr>
+			    	<td>{{ i.name }}</td>
+			    	<td>{{ i.vessel_no }}</td>
+			    	<td>{{ i.status }}</td>
+			    	
+			    </tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage alert</title>
+</head>
+<body>
+
+	<center>
+		
+		<table border="1" class="table-bordered table table-striped form-floating">
+			<form ><h1 > Manage Alert</h1>
+				<tr >
+					<td>Date</td>
+					<td>Description</td>
+                    <td colspan="2"></td>
+				</tr>
+                {% for i in b %}
+				<tr >
+					<td>{{ i.date }}</td>
+					<td>{{ i.description }}</td>
+					<td><a href="{% url 'cvb' idd=i.alert_id %}"  class="btn btn-outline-primary">Delete</td>
+
+				</tr>
+                {% endfor %}
+			</form>
+		</table>
+	</center>
+
+
+
+</body>
+</html>
+{% endblock %}

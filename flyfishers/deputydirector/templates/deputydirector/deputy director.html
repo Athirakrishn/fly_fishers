@@ -1,0 +1,72 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>deputy director</title>
+</head>
+<body>
+	<center><h1 style="color: whitesmoke">REGISTER</h1>
+<table>
+	<form method="POST" class="form-floating" >
+        {% csrf_token %}
+		<tr style="color: whitesmoke">
+			<td >Name:</td>
+			<td><input type="text" name="nam" required class="form-control  bg-transparent" style="color: whitesmoke" ></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td >Date Of Birth:</td>
+			<td><input type="text" name="dob" required class="form-control  bg-transparent" style="color: whitesmoke" ></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>Gender:</td>
+			<td><input type="radio" name="gen" value="Male" checked >Male
+            <input type="radio" name="gen" value="Female">Female
+            <input type="radio" name="gen" value="Others">Other </td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>Qualification:</td>
+			<td><input type="text" name="Qua" required class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>Pin Code:</td>
+			<td><input type="text" name="nn" required pattern="{0-9}" minlength="6" maxlength="6" class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>City:</td>
+			<td><input type="text" name="city" required class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>District:</td>
+			<td><input type="text" name="District" required class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>Contact No:</td>
+			<td><input type="text" name="number" required pattern="{0-9}" minlength="10" maxlength="10" class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td>Email:</td>
+			<td><input type="email" name="email" required class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+	
+		<tr style="color: whitesmoke">
+			<td>Password:</td>
+			<td><input type="Password" name="Password" required class="form-control  bg-transparent" style="color: whitesmoke"></td>
+		</tr>
+		<tr style="color: whitesmoke">
+			<td></td>
+			<td><input type="submit" name="btn" value="REGISTER" class="btn btn-outline-primary" style="color: whitesmoke"></td>
+			
+		</tr>
+		{% if msg %}
+            <script>
+            alert("Registered sucessfully")
+            </script>
+        {% endif %}
+	</center>
+	</form>
+</table>		
+
+</body>
+</html>
+{% endblock %}

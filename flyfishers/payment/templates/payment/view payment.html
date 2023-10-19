@@ -1,0 +1,41 @@
+{% extends 'temp/Matsya_Bhavan_Officer.html' %}
+{% block base2 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> view payment</title>
+</head>
+<body>
+	<center>
+		<table border="1" class="table-bordered table table-striped">
+			<form><h1>Payment</h1>
+				<tr>
+					<td>Name</td>
+					<td>Account Number</td>
+					<td>Amount</td>
+					<td>BankName</td>
+					<td>BranchName</td>
+					<td>IFSC Code</td>
+					<td>status</td>
+				</tr>
+                {% for i in x %}
+				<tr>
+                    <td>{{ i.name }}</td>
+					<td>{{ i.account_no }}</td>
+					<td>{{ i.amount }}</td>
+					<td>{{ i.bank_name }}</td>
+					<td>{{ i.branch_name }}</td>
+					<td>{{ i.ifsc_code }}</td>
+					<td>{{ i.status }}</td>
+
+				</tr>
+                {% endfor %}
+				
+				
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+{% endblock %}

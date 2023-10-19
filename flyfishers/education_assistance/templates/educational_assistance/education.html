@@ -1,0 +1,37 @@
+{% extends 'temp/director.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>educational assistance</title>
+</head>
+<body>
+	<center><h1 style="color: white">EDUCATIONAL ASSISTANCE</h1>
+		<table>
+			<form method="post"  enctype="multipart/form-data" class="form-floating">
+                {% csrf_token %}
+				<tr>
+					<td style="color: white">Scolarship Name:</td>
+					<td><input type="text" name="scp" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td style="color: white">Description:</td>
+					<td><input type="file" name="desc" required style="color: white" class="form-control bg-transparent"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btn" value="ADD" style="color: white" class="btn btn-outline-primary"></td>
+				</tr>
+        {% if msg %}
+            <script>
+            alert("Educational assistance added successfully")
+            </script>
+        {% endif %}
+			</form>
+		</table>
+	</center>
+
+</body>
+</html>
+
+{% endblock %}
